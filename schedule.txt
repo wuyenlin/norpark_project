@@ -1,11 +1,9 @@
-May
-4th
-11th
-18th
-25th
+MAY
+18th Finish reading paper + know what parts of code to re-write
+25th Re-write code in PyTorch
 
-Jun
+JUN
 1th
 8th
-15th
-22th
+15th Ready to present
+22th Submit final blog post
