@@ -1,0 +1,23 @@
+INFO 2020-05-20 03:50:57: Setting up mAlexNet trained on CNRParkAB_even, validated on CNRPark-EXT_val, PKLot_val, tested on CNRParkAB_odd ...
+INFO 2020-05-20 03:50:59: Training on CNRParkAB_even while validating on CNRPark-EXT_val, PKLot_val ...
+I0520 04:33:33.666195 15742 solver.cpp:347] Iteration 570, Testing net (#0)
+I0520 04:33:42.716089 15742 solver.cpp:414]     Test net output #0: accuracy = 0.855789
+I0520 04:33:42.716128 15742 solver.cpp:414]     Test net output #1: loss = 0.275275 (* 1 = 0.275275 loss)
+I0520 04:33:42.716135 15742 solver.cpp:347] Iteration 570, Testing net (#1)
+I0520 04:34:30.231603 15742 solver.cpp:414]     Test net output #0: accuracy = 0.734175
+I0520 04:34:30.231797 15742 solver.cpp:414]     Test net output #1: loss = 0.483922 (* 1 = 0.483922 loss)
+I0520 04:34:30.874456 15742 solver.cpp:239] Iteration 570 (0.0512864 iter/s, 58.495s/3 iters), loss = 0.175342
+I0520 04:34:30.874503 15742 solver.cpp:258]     Train net output #0: loss = 0.174056 (* 1 = 0.174056 loss)
+I0520 04:34:30.874514 15742 sgd_solver.cpp:112] Iteration 570, lr = 0.00045
+I0520 04:34:32.807585 15742 solver.cpp:239] Iteration 573 (1.55199 iter/s, 1.933s/3 iters), loss = 0.201243
+I0520 04:34:32.807627 15742 solver.cpp:258]     Train net output #0: loss = 0.261806 (* 1 = 0.261806 loss)
+I0520 04:34:32.807636 15742 sgd_solver.cpp:112] Iteration 573, lr = 0.00045
+I0520 04:34:34.737574 15742 solver.cpp:239] Iteration 576 (1.55521 iter/s, 1.929s/3 iters), loss = 0.211934
+I0520 04:34:34.737618 15742 solver.cpp:258]     Train net output #0: loss = 0.220453 (* 1 = 0.220453 loss)
+I0520 04:34:34.737627 15742 sgd_solver.cpp:112] Iteration 576, lr = 0.00045
+I0520 04:34:36.024343 15742 solver.cpp:464] Snapshotting to binary proto file snapshots/snapshot_iter_579.caffemodel
+I0520 04:34:36.025019 15742 sgd_solver.cpp:284] Snapshotting solver state to binary proto file snapshots/snapshot_iter_579.solverstate
+I0520 04:34:36.328052 15742 solver.cpp:327] Iteration 579, loss = 0.197199
+I0520 04:34:36.328085 15742 solver.cpp:332] Optimization Done.
+I0520 04:34:36.328094 15742 caffe.cpp:250] Optimization Done.
+

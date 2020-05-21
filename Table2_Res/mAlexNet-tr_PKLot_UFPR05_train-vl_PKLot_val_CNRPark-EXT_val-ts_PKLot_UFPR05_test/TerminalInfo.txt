@@ -1,0 +1,26 @@
+DEBUG 2020-05-19 21:24:59: CACHEDIR=/home/hao/.cache/matplotlib
+DEBUG 2020-05-19 21:24:59: Using fontManager instance from /home/hao/.cache/matplotlib/fontList.json
+DEBUG 2020-05-19 21:24:59: backend Qt5Agg version 5.6
+INFO 2020-05-19 21:25:00: Setting up mAlexNet trained on PKLot_UFPR05_train, validated on PKLot_val, CNRPark-EXT_val, tested on PKLot_UFPR05_test ...
+INFO 2020-05-19 21:25:01: Training on PKLot_UFPR05_train while validating on PKLot_val, CNRPark-EXT_val ...
+I0519 23:58:33.137421  5930 solver.cpp:414]     Test net output #1: loss = 0.340739 (* 1 = 0.340739 loss)
+I0519 23:58:33.137428  5930 solver.cpp:347] Iteration 8619, Testing net (#1)
+I0519 23:58:42.180927  5930 solver.cpp:414]     Test net output #0: accuracy = 0.573684
+I0519 23:58:42.180974  5930 solver.cpp:414]     Test net output #1: loss = 1.90069 (* 1 = 1.90069 loss)
+I0519 23:58:46.174520  5930 solver.cpp:239] Iteration 8624 (0.547095 iter/s, 89.564s/49 iters), loss = 0.0315886
+I0519 23:58:46.174576  5930 solver.cpp:258]     Train net output #0: loss = 0.00417367 (* 1 = 0.00417367 loss)
+I0519 23:58:46.174583  5930 sgd_solver.cpp:112] Iteration 8624, lr = 0.00045
+I0519 23:59:18.772289  5930 solver.cpp:239] Iteration 8673 (1.50321 iter/s, 32.597s/49 iters), loss = 0.0253288
+I0519 23:59:18.772450  5930 solver.cpp:258]     Train net output #0: loss = 0.0191939 (* 1 = 0.0191939 loss)
+I0519 23:59:18.772462  5930 sgd_solver.cpp:112] Iteration 8673, lr = 0.00045
+I0519 23:59:51.203449  5930 solver.cpp:239] Iteration 8722 (1.51095 iter/s, 32.43s/49 iters), loss = 0.0267903
+I0519 23:59:51.203653  5930 solver.cpp:258]     Train net output #0: loss = 0.0151679 (* 1 = 0.0151679 loss)
+I0519 23:59:51.203662  5930 sgd_solver.cpp:112] Iteration 8722, lr = 0.00045
+I0520 00:00:23.535130  5930 solver.cpp:239] Iteration 8771 (1.51557 iter/s, 32.331s/49 iters), loss = 0.0235617
+I0520 00:00:23.535295  5930 solver.cpp:258]     Train net output #0: loss = 0.091275 (* 1 = 0.091275 loss)
+I0520 00:00:23.535310  5930 sgd_solver.cpp:112] Iteration 8771, lr = 0.00045
+I0520 00:00:47.713089  5930 solver.cpp:464] Snapshotting to binary proto file snapshots/snapshot_iter_8809.caffemodel
+I0520 00:00:47.713821  5930 sgd_solver.cpp:284] Snapshotting solver state to binary proto file snapshots/snapshot_iter_8809.solverstate
+I0520 00:00:47.714148  5930 solver.cpp:332] Optimization Done.
+I0520 00:00:47.714154  5930 caffe.cpp:250] Optimization Done.
+
