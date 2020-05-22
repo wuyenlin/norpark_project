@@ -1,0 +1,11 @@
+1.T4T4  Test net output #0: accuracy = 0.805789
+2.T5B5  Test net output #0: accuracy = 0.573684
+3.T4TP  Test net output #0: accuracy = 0.805789
+4.TPTP  Test net output #0: accuracy = 0.805789
+5.TeTo  Test net output #0: accuracy = 0.855789
+6.TPT4  Test net output #0: accuracy = 0.971068
+7.T4T5  Test net output #0: accuracy = 0.805789
+8.T5T4  Test net output #0: accuracy = 0.573684
+9.ToTe  Test net output #0: accuracy = 0.934737
+10.T5TP Test net output #0: accuracy = 0.573684
+11.TPT5 Test net output #0: accuracy = 0.971068
