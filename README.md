@@ -1,7 +1,7 @@
 # cv_project
 CV Project Repository
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1rLJZP2MygZGP8SXyGsleC6g_rCK4rUib)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1IldHTJLOqBM0Ex8LOQKyEQrqWBVGslZw?authuser=1)
 
 
 This final project is part of the requirement of the course CS4245 Seminar Computer Vision by Deep Learning (2019/2020) at TU Delft. The work is done by group 8, including Hao Liu, Sigurd Totland, and Yen-Lin Wu.
