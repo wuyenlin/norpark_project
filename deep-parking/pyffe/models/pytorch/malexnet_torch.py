@@ -10,13 +10,11 @@ class mAlexNet(nn.Module):
         self.convol = nn.Sequential(
 
             # Layer 1
-            # nn.Conv2d(3, 16, kernel_size=11, stride=4, padding=2),
             nn.Conv2d(3, 16, kernel_size=11, stride=4),
             nn.ReLU(inplace=True),
             nn.MaxPool2d(kernel_size=3, stride=2),
 
             # Layer 2
-            # nn.Conv2d(16, 20, kernel_size=5, stride=1, padding=2),
             nn.Conv2d(16, 20, kernel_size=5, stride=1),
             nn.ReLU(inplace=True),
             nn.MaxPool2d(kernel_size=3, stride=2),
@@ -35,12 +33,12 @@ class mAlexNet(nn.Module):
             nn.ReLU(inplace=True),
 
             # Layer 5
-            nn.Linear(48, 2)  # chk number
+            nn.Linear(48, 2)  # chk number, 2 as in num_classes
         )
 
     def forward(self, x):
         x = self.convol(x)
-        # x = x.view(x.size(0), 30)
+        x = x.view(x.size(0), -1)
         x = self.fc(x)
         return x
 
