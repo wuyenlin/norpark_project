@@ -1,9 +1,0 @@
-MAY
-18th Finish reading paper + know what parts of code to re-write
-25th Wu starts Re-write mAlexNet in PyTorch + Hao run mAlexNet reproduction + Sigurd starts with hypothsis
-
-JUN
-1th
-8th
-15th Ready to present
-22th Submit final blog post
