@@ -22,7 +22,7 @@ systemctl status cron
 
 To configure a new job, enter:
 ```
-vim /etc/crontab
+sudo vim /etc/crontab
 ```
 
 Add a new line below, specifying the time and path to your file:
@@ -50,4 +50,4 @@ Finally, run
 ```
 systemctl restart cron
 ```
-to restart the crontab for the changes to take place.
+to restart the crontab for the changes to take place. Insert your password when prompted. 
