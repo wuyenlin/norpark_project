@@ -2,7 +2,7 @@ The `get_img.sh` downloads the CCTV camera image from online and name it after t
 
 
 ## Setting up
-Step 1: Install package
+### Step 1: Install package
 
 ```
 sudo apt-get update && sudo apt-get upgrade
@@ -11,14 +11,14 @@ dpkg -l cron
 sudo apt-get install cron
 ```
 
-Step 2: Ensure cron service is running
+### Step 2: Ensure cron service is running
 
 Run the following command:
 ```
 systemctl status cron
 ```
 
-Step 3: Add job
+### Step 3: Add job
 
 To configure a new job, enter:
 ```
@@ -45,7 +45,7 @@ The input format is as follows:
 ```
 
 
-Step 4: Update changes
+### Step 4: Update changes
 Finally, run
 ```
 systemctl restart cron
