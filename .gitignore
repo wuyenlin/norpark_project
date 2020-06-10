@@ -1,0 +1,7 @@
+Table2_Res/
+dataset/
+.vscode/
+__pycache__/
+code/__pycache__/
+*.py[cod]
+*$py.class
