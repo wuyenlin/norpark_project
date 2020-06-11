@@ -21,7 +21,7 @@ def test(img_path, target_path, transforms, net):
             labels = torch.Tensor(labels)
             if torch.cuda.is_available():
                 device = torch.device("cuda:0")
-                inputs = inputs.to(device)
+                images = images.to(device)
                 labels = labels.to(device)
             outputs = net(images)
             _, predicted = torch.max(outputs.data, 1)
