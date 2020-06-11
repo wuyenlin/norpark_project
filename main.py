@@ -41,7 +41,7 @@ if __name__=="__main__":
     criterion = nn.CrossEntropyLoss()
 
     train(args.epochs, args.train_img, args.train_lab, transforms, net, criterion)
-    PATH = './cifar_net_even.pth'
+    PATH = './model.pth'
     torch.save(net.state_dict(), PATH)
     net.load_state_dict(torch.load(PATH))
     accuracy = test(args.test_img, args.test_lab, transforms, net)

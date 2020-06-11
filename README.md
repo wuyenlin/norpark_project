@@ -13,11 +13,12 @@ Clone the repository and download the image dataset. Run the code as follows:
 ```
 python3 main.py
 ```
-See arguments in options.py. For example, 
+By default, it runs `epochs=18`, train on `CNRPark Even` and test on `CNRPark Odd`.
+The setting can be changed as shown in follows. See arguments in options.py. For example, 
 ```
-python3 main.py --epochs 2 --train_img 'CNRPark-Patches-150x150/' --test_img 'CNRPark-Patches-150x150/'
-```
+python3 main.py --epochs 6 --train_img PKLot/PKLotSegmented/ --train_lab splits/PKLot/UFPR04.txt --test_img PKLot/PKLotSegmented/ --test_lab splits/PKLot/UFPR04_test.txt
 
+```
 
 ### Requirements
 ```
