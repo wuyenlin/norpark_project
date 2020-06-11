@@ -45,4 +45,4 @@ if __name__=="__main__":
     torch.save(net.state_dict(), PATH)
     net.load_state_dict(torch.load(PATH))
     accuracy = test(args.test_img, args.test_lab, transforms, net)
-    print("\nThe accuracy of training on '{}' and testing on '{}' is {:.3f}.".format(train_lab_path.split('.')[0], test_lab_path.split('.')[0], accuracy))
+    print("\nThe accuracy of training on '{}' and testing on '{}' is {:.3f}.".format(args.train_lab_path.split('.')[0], args.test_lab_path.split('.')[0], accuracy))

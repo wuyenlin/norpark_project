@@ -1,6 +1,7 @@
 Table2_Res/
 dataset/
 .vscode/
+CNRPark-Patches-150x150/
 __pycache__/
 utils/__pycache__/
 model/__pycache__/
