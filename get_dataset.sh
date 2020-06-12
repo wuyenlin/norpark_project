@@ -5,3 +5,8 @@ wget "http://cnrpark.it/dataset/CNR-EXT-Patches-150x150.zip" -O "dataset.zip"
 unzip dataset.zip
 rm dataset.zip
 
+wget "http://www.inf.ufpr.br/vri/databases/PKLot.tar.gz" -O "PKLot.tar.gz"
+tar -xvf PKLot.tar.gz
+rm PKLot.tar.gz
+
+
