@@ -35,9 +35,12 @@ if __name__=="__main__":
         imgs, labels = train_loader.__iter__().__next__()
         imshow(train_loader)
 
-    net = mAlexNet().to(device)
-    criterion = nn.CrossEntropyLoss()
+    if args.model == 'mAlexNet':
+        net = mAlexNet().to(device)
+    elif args.model == 'AlexNet':
+        net = AlexNet().to(device)
 
+    criterion = nn.CrossEntropyLoss()
     train(args.epochs, args.train_img, args.train_lab, transforms, net, criterion)
     PATH = './model.pth'
     torch.save(net.state_dict(), PATH)
