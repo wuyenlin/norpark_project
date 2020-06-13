@@ -1,4 +1,4 @@
-from utils.dataloader import selfData
+from utils.dataloader import selfData, collate_fn
 
 import torch
 import torch.nn as nn
@@ -9,7 +9,7 @@ from torchvision import transforms
 
 def train(epoch, img_path, target_path, transforms, net, criterion):
     train_dataset = selfData(img_path, target_path, transforms)
-    train_loader = DataLoader(train_dataset, batch_size = 64, shuffle = True, num_workers = 0,drop_last= False)
+    train_loader = DataLoader(train_dataset, batch_size = 64, shuffle = True, num_workers = 0,drop_last= False, collate_fn=collate_fn)
     for ep in range(epoch):  
         if ep is 0:
             learning_rate = 0.01

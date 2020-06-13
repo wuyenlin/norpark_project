@@ -1,4 +1,4 @@
-from utils.dataloader import selfData
+from utils.dataloader import selfData, collate_fn
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -9,7 +9,7 @@ from torchvision import transforms
 def test(img_path, target_path, transforms, net):
     print("\nTesting starts now...")
     test_dataset = selfData(img_path, target_path, transforms)
-    test_loader = DataLoader(test_dataset, batch_size = 100, shuffle = True, num_workers = 0)
+    test_loader = DataLoader(test_dataset, batch_size = 100, shuffle = True, num_workers = 0, collate_fn=collate_fn)
     correct = 0
     total = 0
     item = 1
