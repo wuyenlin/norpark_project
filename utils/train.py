@@ -20,10 +20,7 @@ def train(epoch, img_path, target_path, transforms, net, criterion):
         running_loss = 0.0
         print("Epoch {}.".format(ep+1))
         for i, data in enumerate(train_loader,1):
-            try:
-                inputs, labels = data
-            except FileNotFoundError:
-                continue
+            inputs, labels = data
             labels = list(map(int, labels))
             labels = torch.Tensor(labels)
             if torch.cuda.is_available():

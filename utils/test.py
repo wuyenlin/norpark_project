@@ -15,10 +15,7 @@ def test(img_path, target_path, transforms, net):
     item = 1
     with torch.no_grad():
         for data in test_loader:
-            try:
-                images, labels = data
-            except FileNotFoundError:
-                continue
+            images, labels = data
             print("Testing on image {}".format(item))
             labels = list(map(int, labels))
             labels = torch.Tensor(labels)
