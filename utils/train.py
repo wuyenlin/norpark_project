@@ -19,12 +19,11 @@ def train(epoch, img_path, target_path, transforms, net, criterion):
             learning_rate = 0.0025
         running_loss = 0.0
         print("Epoch {}.".format(ep+1))
-        for i in range(len(train_loader)):
+        for i, data in enumerate(train_loader,1):
             try:
-                data = train_loader[i]
+                inputs, labels = data
             except FileNotFoundError:
                 continue
-            inputs, labels = data
             labels = list(map(int, labels))
             labels = torch.Tensor(labels)
             if torch.cuda.is_available():
@@ -38,7 +37,7 @@ def train(epoch, img_path, target_path, transforms, net, criterion):
             loss.backward()
             optimizer.step()
             running_loss += loss.item()
-            print("Epoch {}.\tRound {}.\tLoss = {:.3f}.".format(ep+1, i+1, running_loss))
+            print("Epoch {}.\tImage {}.\tLoss = {:.3f}.".format(ep+1, i+1, running_loss))
             if i % 2000 == 1999:    # 2000 mini-batches
                 print('[%d, %5d] loss: %.3f' %
                     (epoch + 1, i + 1, running_loss / 2000))

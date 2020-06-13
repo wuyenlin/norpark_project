@@ -35,12 +35,20 @@ if __name__=="__main__":
         imgs, labels = train_loader.__iter__().__next__()
         imshow(train_loader)
 
-    net = mAlexNet().to(device)
-    criterion = nn.CrossEntropyLoss()
+    train_dataset = selfData(args.train_img, args.train_lab, transforms)
+    train_loader = DataLoader(train_dataset, batch_size = 64, shuffle = True, num_workers = 0, drop_last= False)
+    print(train_loader)
+    # for i in range(len(train_loader)):
+    # for i, data in enumerate(train_loader,0):
+    #     print(data)
+    
+    
+    # net = mAlexNet().to(device)
+    # criterion = nn.CrossEntropyLoss()
 
-    train(args.epochs, args.train_img, args.train_lab, transforms, net, criterion)
-    PATH = './model.pth'
-    torch.save(net.state_dict(), PATH)
-    net.load_state_dict(torch.load(PATH))
-    accuracy = test(args.test_img, args.test_lab, transforms, net)
-    print("\nThe accuracy of training on '{}' and testing on '{}' is {:.3f}.".format(args.train_lab.split('.')[0], args.test_lab.split('.')[0], accuracy))
+    # train(args.epochs, args.train_img, args.train_lab, transforms, net, criterion)
+    # PATH = './model.pth'
+    # torch.save(net.state_dict(), PATH)
+    # net.load_state_dict(torch.load(PATH))
+    # accuracy = test(args.test_img, args.test_lab, transforms, net)
+    # print("\nThe accuracy of training on '{}' and testing on '{}' is {:.3f}.".format(args.train_lab_path.split('.')[0], args.test_lab_path.split('.')[0], accuracy))

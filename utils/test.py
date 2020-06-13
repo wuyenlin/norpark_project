@@ -14,13 +14,12 @@ def test(img_path, target_path, transforms, net):
     total = 0
     item = 1
     with torch.no_grad():
-        for i in range(len(test_loader)):
+        for data in test_loader:
             try:
-                data = test_loader[i]
+                images, labels = data
             except FileNotFoundError:
                 continue
             print("Testing on image {}".format(item))
-            images, labels = data
             labels = list(map(int, labels))
             labels = torch.Tensor(labels)
             if torch.cuda.is_available():
