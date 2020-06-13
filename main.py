@@ -29,13 +29,11 @@ if __name__=="__main__":
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ]) 
 
-    '''
-    #uncomment to have a view of what your training dataset looks like.
-    train_dataset = selfData(img_path2, target_path, transforms)
-    train_loader = DataLoader(train_dataset, batch_size = 64, shuffle = True, num_workers = 0, drop_last= False)
-    imgs, labels = train_loader.__iter__().__next__()
-    imshow(train_loader)
-    '''
+    if args.imshow == True:
+        train_dataset = selfData(args.train_img, args.train_lab, transforms)
+        train_loader = DataLoader(train_dataset, batch_size = 64, shuffle = True, num_workers = 0, drop_last= False)
+        imgs, labels = train_loader.__iter__().__next__()
+        imshow(train_loader)
 
     net = mAlexNet().to(device)
     criterion = nn.CrossEntropyLoss()

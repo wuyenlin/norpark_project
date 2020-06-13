@@ -15,6 +15,7 @@ def args_parser():
     parser = argparse.ArgumentParser()
     
     parser.add_argument('--epochs', type=int, default=18, help="rounds of training")
+    parser.add_argument('--imshow', type=bool, default=False, help="show some training dataset")
     # parser.add_argument('--model', type=str, default='mAlexNet', help='model name')
     parser.add_argument('--train_img', type=str, default='CNRPark-Patches-150x150/', help="path to training set images")
     parser.add_argument('--train_lab', type=str, default='splits/CNRParkAB/even.txt', help="path to training set labels")
