@@ -1,0 +1,13 @@
+Start training: 2020-06-14 11:31:41.680536
+
+Start time of testing on splits/PKLot/UFPR04_test: 2020-06-14 15:24:33.553117
+The accuracy of training on 'splits/PKLot/PUC_train' and testing on 'splits/PKLot/UFPR04_test' is 0.944.
+End time of testing on splits/PKLot/UFPR04_test: 2020-06-14 15:27:16.645300
+
+Start time of testing on splits/PKLot/UFPR05_test: 2020-06-14 15:27:16.645318
+The accuracy of training on 'splits/PKLot/PUC_train' and testing on 'splits/PKLot/UFPR05_test' is 0.933.
+End time of testing on splits/PKLot/UFPR05_test: 2020-06-14 15:31:09.704188
+
+Start time of testing on splits/PKLot/PUC_test: 2020-06-14 15:31:09.704229
+The accuracy of training on 'splits/PKLot/PUC_train' and testing on 'splits/PKLot/PUC_test' is 0.988.
+End time of testing on splits/PKLot/PUC_test: 2020-06-14 15:41:49.256659

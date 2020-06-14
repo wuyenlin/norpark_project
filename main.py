@@ -19,9 +19,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 if __name__=="__main__":
+
     args = args_parser()
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
     transforms = transforms.Compose([
         transforms.Resize(256),
         transforms.RandomResizedCrop(224),
@@ -41,9 +41,13 @@ if __name__=="__main__":
         net = AlexNet().to(device)
 
     criterion = nn.CrossEntropyLoss()
-    train(args.epochs, args.train_img, args.train_lab, transforms, net, criterion)
-    PATH = './model.pth'
-    torch.save(net.state_dict(), PATH)
-    net.load_state_dict(torch.load(PATH))
+    if args.path == '':
+        train(args.epochs, args.train_img, args.train_lab, transforms, net, criterion)
+        PATH = './model.pth'
+        torch.save(net.state_dict(), PATH)
+        net.load_state_dict(torch.load(PATH))
+    else:
+        PATH = args.path
+        net.load_state_dict(torch.load(PATH))
     accuracy = test(args.test_img, args.test_lab, transforms, net)
     print("\nThe accuracy of training on '{}' and testing on '{}' is {:.3f}.".format(args.train_lab.split('.')[0], args.test_lab.split('.')[0], accuracy))
