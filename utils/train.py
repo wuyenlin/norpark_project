@@ -34,7 +34,7 @@ def train(epoch, img_path, target_path, transforms, net, criterion):
             loss.backward()
             optimizer.step()
             running_loss += loss.item()
-            print("Epoch {}.\tImage {}.\tLoss = {:.3f}.".format(ep+1, i+1, running_loss))
+            print("Epoch {}.\tBatch {}.\tLoss = {:.3f}.".format(ep+1, i+1, running_loss))
             if i % 2000 == 1999:    # 2000 mini-batches
                 print('[%d, %5d] loss: %.3f' %
                     (epoch + 1, i + 1, running_loss / 2000))

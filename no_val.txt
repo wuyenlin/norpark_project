@@ -1,0 +1,8 @@
+trained on:	accuracy
+
+'./sunny':	0.824.
+'./overcast':	0.788.
+'./rainy':	0.824.
+'./trained_04':	0.859.
+'./trained_05':	0.832.
+'puc':		0.895.

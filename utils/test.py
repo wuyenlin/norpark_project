@@ -16,7 +16,7 @@ def test(img_path, target_path, transforms, net):
     with torch.no_grad():
         for data in test_loader:
             images, labels = data
-            print("Testing on image {}".format(item))
+            print("Testing on batch {}".format(item))
             labels = list(map(int, labels))
             labels = torch.Tensor(labels)
             if torch.cuda.is_available():
@@ -28,5 +28,4 @@ def test(img_path, target_path, transforms, net):
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
             item += 1
-
     return (correct/total)

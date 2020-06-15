@@ -28,7 +28,6 @@ if __name__=="__main__":
         transforms.ToTensor(),  # normalize to [0, 1]
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ]) 
-
     if args.imshow == True:
         train_dataset = selfData(args.train_img, args.train_lab, transforms)
         train_loader = DataLoader(train_dataset, batch_size = 64, shuffle = True, num_workers = 0, drop_last= False)
