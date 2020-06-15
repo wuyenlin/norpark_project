@@ -13,9 +13,15 @@ Clone the repository and download the image dataset. Run the code as follows:
 > python3 [main.py](main.py)
 
 By default, it runs `epochs=18`, train on `CNRPark Even` and test on `CNRPark Odd`.
-The setting can be changed as shown in follows. See arguments in [options.py](utils/option.py). For example, 
+The setting can be changed as shown in follows. For example, 
 
 > python3 main.py --epochs 6 --train_img PKLot/PKLotSegmented/ --train_lab splits/PKLot/UFPR04.txt --test_img PKLot/PKLotSegmented/ --test_lab splits/PKLot/UFPR04_test.txt
+
+If a trained model is to be loaded and test on other dataset ( i.e. `.pth` file exists), or AlexNet is to be used, run the following command:
+
+> python3 main.py --path sunny.pth --model AlexNet
+
+See arguments in [options.py](utils/option.py).
 
 ### Dataset
 In this project, we not only used the PKLot and CNRPark dataset for training and testing, but also created our own dataset by fetching a camera image from Trondheim, Norway that is accessible online on [Inescam](https://www.insecam.org/). We made our own [image-segmentation toolbox](https://github.com/wuyenlin/image_segmentation) to segment and label each image.

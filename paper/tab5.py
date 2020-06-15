@@ -37,10 +37,13 @@ def plot_fig5(sunny, overcast, rainy, title):
     plt.ylim(0.6, 1)
     plt.show()
 
-sunny = (0, 0.949, 0.91, 0.756)
-overcast= (0.877, 0, 0.904, 0.641)
-rainy = (0.874, 0.942, 0, 0.709)
-title = 'Inter-weather experiment (reproduction)'
+# sunny = (0, 0.949, 0.91, 0.756)
+# overcast= (0.877, 0, 0.904, 0.641)
+# rainy = (0.874, 0.942, 0, 0.709)
+sunny = (0, 0.95, 0.909, 0.786)
+overcast= (0.878, 0, 0.905, 0.682)
+rainy = (0.876, 0.943, 0, 0.747)
+title = 'Inter-weather experiment (reproduction) on val'
 plot_fig5(sunny, overcast, rainy, title)
 
 sunny = (0, 0.97, 0.96, 0.85)
