@@ -1,0 +1,13 @@
+Start training: 2020-06-14 17:42:44.318127
+
+Start time of testing on splits/CNRPark-EXT/overcast: 2020-06-14 18:48:40.419626
+The accuracy of training on 'splits/CNRPark-EXT/sunny' and testing on 'splits/CNRPark-EXT/overcast' is 0.949.
+End time of testing on splits/CNRPark-EXT/overcast: 2020-06-14 18:55:46.720857
+
+Start time of testing on splits/CNRPark-EXT/rainy: 2020-06-14 18:55:46.720857
+The accuracy of training on 'splits/CNRPark-EXT/sunny' and testing on 'splits/CNRPark-EXT/rainy' is 0.910.
+End time of testing on splits/CNRPark-EXT/rainy: 2020-06-14 19:01:44.530888
+
+Start time of testing on splits/PKLot/test: 2020-06-14 19:01:44.530888
+The accuracy of training on 'splits/CNRPark-EXT/sunny' and testing on 'splits/PKLot/test' is 0.756.
+End time of testing on splits/PKLot/test: 2020-06-14 19:52:01.200083
