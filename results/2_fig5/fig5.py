@@ -25,6 +25,7 @@ def plot_fig5(sunny, overcast, rainy, title):
     color='#ffcc00',
     label='Rainy')
 
+    plt.xlabel('Test set')
     plt.ylabel('Accuracy')
     plt.title(title)
     plt.xticks(index + bar_width, ('SUNNY', 'OVERCAST', 'RAINY', 'PKLot'))
