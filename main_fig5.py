@@ -27,17 +27,18 @@ if __name__=="__main__":
         transforms.RandomResizedCrop(224),
         transforms.ToTensor(),  # normalize to [0, 1]
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-    ]) 
+    ])
 
     net = mAlexNet().to(device)
     criterion = nn.CrossEntropyLoss()
-    
-    args.train_img = 'PKLot/PKLotSegmented'
-    args.train_lab = ['splits/PKLot/UFPR04_train.txt','splits/PKLot/UFPR05_train.txt', 'splits/PKLot/PUC_train.txt']
-    args.test_img = 'PKLot/PKLotSegmented'
-    args.test_lab = ['splits/PKLot/UFPR04_test.txt','splits/PKLot/UFPR05_test.txt', 'splits/PKLot/PUC_test.txt']
 
-    txt_file = open("tab2_results.txt", 'a')
+    args.train_img = 'CNRPark-EXT/PATCHES'
+    args.train_lab = ['splits/CNRPark-EXT/sunny.txt','splits/CNRPark-EXT/overcast.txt','splits/CNRPark-EXT/rainy.txt']
+    args.test_img = 'CNRPark-EXT/PATCHES/'
+    args.test_lab = ['splits/CNRPark-EXT/sunny.txt','splits/CNRPark-EXT/overcast.txt','splits/CNRPark-EXT/rainy.txt','splits/PKLot/val.txt']
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
+    txt_file = open('fig5_results.txt', 'a')
     txt_file.write("Start training: {}\n".format(datetime.now()))
 
     for train_set in args.train_lab:
@@ -46,7 +47,14 @@ if __name__=="__main__":
         torch.save(net.state_dict(), PATH)
         net.load_state_dict(torch.load(PATH))
         for test_set in args.test_lab:
-            accuracy = test(args.test_img, test_set, transforms, net)
+            if test_set == train_set:
+                accuracy = 'none'
+                print("Skip to next test.")
+            elif test_set == 'splits/PKLot/val.txt':
+                args.test_img = 'PKLot/PKLotSegmented'
+                accuracy = test(args.test_img, test_set, transforms, net)
+            else:
+                accuracy = test(args.test_img, test_set, transforms, net)
             print("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
             txt_file.write("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
     print("Experiments ended.")

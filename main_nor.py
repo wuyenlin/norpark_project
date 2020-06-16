@@ -21,12 +21,7 @@ from datetime import datetime
 
 if __name__=="__main__":
     args = args_parser()
-
-    args.test_img = './'
-    args.test_lab = 'splits/no/nor_lab.txt'
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
-    txt_file = open('no_val.txt', 'a')
     transforms = transforms.Compose([
         transforms.Resize(256),
         transforms.RandomResizedCrop(224),
@@ -37,11 +32,19 @@ if __name__=="__main__":
     net = mAlexNet().to(device)
     criterion = nn.CrossEntropyLoss()
 
-    PATHS = ['./sunny.pth','./overcast.pth','./rainy.pth','./04.pth','./05.pth','puc.pth']
+    args.test_img = 'dataset/'
+    args.test_lab = 'splits/no/nor_lab.txt'
+
+    txt_file = open('nor_val.txt', 'a')
+    txt_file.write("Start training: {}\n".format(datetime.now()))
+
+    PATHS = ['trained_model/sunny.pth','trained_model/overcast.pth',
+             'trained_model/rainy.pth','trained_model/04.pth',
+             'trained_model/05.pth','trained_model/puc.pth']
     for PATH in PATHS:
         net.load_state_dict(torch.load(PATH))
         accuracy = test(args.test_img, args.test_lab, transforms, net)
-        txt_file.write("'{}':\t{:.3f}.\n".format(PATH.split('.pth')[0], accuracy))
+        trained_name = PATH.split('/')[-1].split('.jpg')[0]
+        txt_file.write("'{}':\t{:.3f}.\n".format(trained_name, accuracy))
         print('\nAccuracy : {}'.format(accuracy))
-
     txt_file.close()

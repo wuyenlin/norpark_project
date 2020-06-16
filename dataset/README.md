@@ -2,6 +2,7 @@ The `get_img.sh` downloads the CCTV camera image from online and name it after t
 
 
 ## Setting up
+To run the shell script at an appointed interval, follow the procedures below.
 ### Step 1: Install package
 
 ```
