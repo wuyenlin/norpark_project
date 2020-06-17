@@ -33,7 +33,7 @@ if __name__=="__main__":
     criterion = nn.CrossEntropyLoss()
 
     args.test_img = 'dataset/'
-    args.test_lab = 'splits/no/nor_lab.txt'
+    args.test_lab = 'splits/NORPark/nor_lab.txt'
 
     txt_file = open('nor_val.txt', 'a')
     txt_file.write("Start training: {}\n".format(datetime.now()))
