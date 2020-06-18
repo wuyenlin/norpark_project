@@ -37,17 +37,17 @@ if __name__=="__main__":
     args.test_img = 'PKLot/PKLotSegmented'
     args.test_lab = ['splits/PKLot/UFPR04_test.txt','splits/PKLot/UFPR05_test.txt', 'splits/PKLot/PUC_test.txt']
 
-    txt_file = open("tab2_results.txt", 'a')
-    txt_file.write("Start training: {}\n".format(datetime.now()))
+    # txt_file = open("tab2_results.txt", 'a')
+    # txt_file.write("Start training: {}\n".format(datetime.now()))
 
     for train_set in args.train_lab:
         train(args.epochs, args.train_img, train_set, transforms, net, criterion)
         PATH = './trained.pth'
         torch.save(net.state_dict(), PATH)
-        net.load_state_dict(torch.load(PATH))
-        for test_set in args.test_lab:
-            accuracy = test(args.test_img, test_set, transforms, net)
-            print("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
-            txt_file.write("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
-    print("Experiments ended.")
-    txt_file.close()
+    #     net.load_state_dict(torch.load(PATH))
+    #     for test_set in args.test_lab:
+    #         accuracy = test(args.test_img, test_set, transforms, net)
+    #         print("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
+    #         txt_file.write("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
+    # print("Experiments ended.")
+    # txt_file.close()

@@ -4,7 +4,7 @@ from utils.imshow import imshow
 from model.malexnet import mAlexNet
 from model.alexnet import AlexNet
 from utils.dataloader import selfData
-from utils.train import train
+from utils.train_weather import train
 from utils.test import test
 
 import os
@@ -29,6 +29,7 @@ if __name__=="__main__":
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
 
+    args.epochs = 6
     net = mAlexNet().to(device)
     criterion = nn.CrossEntropyLoss()
 
@@ -53,9 +54,11 @@ if __name__=="__main__":
             elif test_set == 'splits/PKLot/val.txt':
                 args.test_img = 'PKLot/PKLotSegmented'
                 accuracy = test(args.test_img, test_set, transforms, net)
+                print("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
+                txt_file.write("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
             else:
                 accuracy = test(args.test_img, test_set, transforms, net)
-            print("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
-            txt_file.write("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
+                print("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
+                txt_file.write("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
     print("Experiments ended.")
     txt_file.close()

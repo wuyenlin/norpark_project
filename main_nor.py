@@ -4,7 +4,7 @@ from utils.imshow import imshow
 from model.malexnet import mAlexNet
 from model.alexnet import AlexNet
 from utils.dataloader import selfData
-from utils.train import train
+from utils.train_weather import train
 from utils.test import test
 
 import os
@@ -29,6 +29,7 @@ if __name__=="__main__":
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ]) 
 
+    args.epochs = 6
     net = mAlexNet().to(device)
     criterion = nn.CrossEntropyLoss()
 
