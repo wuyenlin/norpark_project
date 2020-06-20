@@ -11,12 +11,11 @@ def train(epoch, img_path, target_path, transforms, net, criterion):
     train_dataset = selfData(img_path, target_path, transforms)
     train_loader = DataLoader(train_dataset, batch_size = 64, shuffle = True, num_workers = 0,drop_last= False, collate_fn=collate_fn)
     for ep in range(epoch):  
-        if ep >= 0:
-            learning_rate = 0.0008
+        if ep >= 4:
+            learning_rate = 0.0008*0.75*0.75
         elif ep >= 2:
             learning_rate = 0.0008*0.75
-        elif ep >= 4:
-            learning_rate = 0.0008*0.75*0.75
+        learning_rate = 0.0008
         running_loss = 0.0
         print("Epoch {}.".format(ep+1))
         for i, data in enumerate(train_loader,1):
