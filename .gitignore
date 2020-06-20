@@ -1,11 +1,6 @@
 .vscode/
 dataset/
-CNRPark-Patches-150x150/
 CNRPark-EXT
-PKLot/
-run/
 __pycache__/
 utils/__pycache__/
 model/__pycache__/
-*.py[cod]
-*$py.class

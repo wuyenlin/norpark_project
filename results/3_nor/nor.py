@@ -17,7 +17,7 @@ color='#3366ff'
 
 plt.xlabel('Training set')
 plt.ylabel('Accuracy')
-plt.title('Testing on Trondheim Parking Lot')
+plt.title('Testing on NORPark')
 plt.xticks(index , ('SUNNY', 'OVERCAST', 'RAINY', 'UFPR04', 'UFPR05', 'PUC'))
 
 plt.ylim(0.6, 1)

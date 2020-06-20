@@ -2,9 +2,8 @@
 from utils.options import args_parser
 from utils.imshow import imshow
 from model.malexnet import mAlexNet
-from model.alexnet import AlexNet
 from utils.dataloader import selfData
-from utils.train_weather import train
+from utils.train import train
 from utils.test import test
 
 import os
@@ -29,7 +28,6 @@ if __name__=="__main__":
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
 
-    args.epochs = 6
     net = mAlexNet().to(device)
     criterion = nn.CrossEntropyLoss()
 
@@ -46,19 +44,14 @@ if __name__=="__main__":
         train(args.epochs, args.train_img, train_set, transforms, net, criterion)
         PATH = './trained.pth'
         torch.save(net.state_dict(), PATH)
+        net = mAlexNet().to(device)
         net.load_state_dict(torch.load(PATH))
         for test_set in args.test_lab:
-            if test_set == train_set:
-                accuracy = 'none'
-                print("Skip to next test.")
-            elif test_set == 'splits/PKLot/val.txt':
+            args.test_img = 'CNRPark-EXT/PATCHES/'
+            if test_set == 'splits/PKLot/val.txt':
                 args.test_img = 'PKLot/PKLotSegmented'
-                accuracy = test(args.test_img, test_set, transforms, net)
-                print("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
-                txt_file.write("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
-            else:
-                accuracy = test(args.test_img, test_set, transforms, net)
-                print("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
-                txt_file.write("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
+            accuracy = test(args.test_img, test_set, transforms, net)
+            print("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
+            txt_file.write("Training on '{}' and testing on '{}': {:.3f}.\n".format(train_set.split('.')[0], test_set.split('.')[0], accuracy))
     print("Experiments ended.")
     txt_file.close()

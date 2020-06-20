@@ -2,7 +2,6 @@
 from utils.options import args_parser
 from utils.imshow import imshow
 from model.malexnet import mAlexNet
-from model.alexnet import AlexNet
 from utils.dataloader import selfData
 from utils.train_weather import train
 from utils.test import test
@@ -43,6 +42,7 @@ if __name__=="__main__":
              'trained_model/rainy.pth','trained_model/04.pth',
              'trained_model/05.pth','trained_model/puc.pth']
     for PATH in PATHS:
+        net = mAlexNet().to(device)
         net.load_state_dict(torch.load(PATH))
         accuracy = test(args.test_img, args.test_lab, transforms, net)
         trained_name = PATH.split('/')[-1].split('.jpg')[0]

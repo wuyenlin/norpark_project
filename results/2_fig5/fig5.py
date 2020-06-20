@@ -53,3 +53,9 @@ overcast= (0.92, 0, 0.95, 0.82)
 rainy = (0.94, 0.97, 0, 0.92)
 title = 'Inter-weather experiment (paper)'
 plot_fig5(sunny, overcast, rainy, title)
+
+sunny = (0.937, 0.95, 0.909, 0.786)
+overcast= (0.916, 0.965, 0.967, 0.682)
+rainy = (0.911, 0.954, 0.944, 0.747)
+title = 'Inter-weather experiment (reproduction)'
+plot_fig5(sunny, overcast, rainy, title)
