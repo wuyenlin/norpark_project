@@ -28,9 +28,7 @@ for i in range(0, y_raw.shape[0]):
     y_val = st.mean(y_raw[i])
     y = np.append(y, y_val)
     y_err = np.append(y_err, [y_val - min(y_raw[i]), max(y_raw[i]) - y_val])
-    # print(max(y_raw[i])-y_val)
 
-# y_err = y_err.reshape(2,-1)
 plt.figure()
 plt.grid(axis='y', alpha = 0.5)
 plt.errorbar(x, y, yerr=np.reshape(y_err,(2,-1),order='F'), fmt='o',linewidth=1,
@@ -38,5 +36,6 @@ plt.errorbar(x, y, yerr=np.reshape(y_err,(2,-1),order='F'), fmt='o',linewidth=1,
 plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.xticks(ticks=x)
-plt.title('Trained on 04 and Test on 05')
+plt.ylim(0.4,1)
+plt.title('Train on 04 and Test on 05')
 plt.show()
