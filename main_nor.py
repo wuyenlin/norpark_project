@@ -32,7 +32,7 @@ if __name__=="__main__":
     net = mAlexNet().to(device)
     criterion = nn.CrossEntropyLoss()
 
-    args.test_img = 'dataset/'
+    args.test_img = 'NORPark/'
     args.test_lab = 'splits/NORPark/nor_lab.txt'
 
     txt_file = open('nor_val.txt', 'a')
