@@ -2,6 +2,7 @@
 from utils.options import args_parser
 from utils.imshow import imshow
 from model.malexnet import mAlexNet
+from model.alexnet import AlexNet
 from utils.dataloader import selfData
 from utils.train_weather import train
 from utils.test import test

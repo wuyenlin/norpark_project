@@ -3,9 +3,16 @@
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19WoAA0vinucKOj-dxMs8je-tKms8rZza?usp=sharing)
 
 
-This final project is part of the requirements of the course CS4245 Seminar Computer Vision by Deep Learning (2019/2020) at TU Delft. The work is done by group 8, including Hao Liu, Sigurd Totland, and Yen-Lin Wu.
+This final project is a part of the requirements of the course CS4245 Seminar Computer Vision by Deep Learning (2019/2020) at TU Delft. The work is done by group 8, including Hao Liu, Sigurd Totland, and Yen-Lin Wu.
 
-In this final project, we attempt to reproduce the result of [CNRPark+EXT](http://cnrpark.it/)- more specifically, table 2 and figure 5 in the paper, [Deep learning for decentralized parking lot occupancy detection](https://www.sciencedirect.com/science/article/abs/pii/S095741741630598X).
+In this final project, we attempted to reproduce the result of [CNRPark+EXT](http://cnrpark.it/)- more specifically, table 2 and figure 5 in the paper, [Deep learning for decentralized parking lot occupancy detection](https://www.sciencedirect.com/science/article/abs/pii/S095741741630598X).
+We also created our own test set by downloading images of a surveillance camera in a parking lot at Trondheim, Norway (details can be found [here](NORPark/)). We report both the reproduction results and the accuracy testing on NORPark. A full blog post can be read here on [Medium]().
+
+### Dataset
+Run the following commands to download the CNRPark, CNRPark-EXT, and PKLot dataset used in this project.
+
+> chmod +x get_dataset.sh
+> ./get_dataset.sh
 
 ### Run
 Clone the repository and download the image dataset. Run the code as follows:
@@ -19,8 +26,11 @@ If a trained model is to be loaded and test on other dataset ( i.e. `.pth` file 
 
 See arguments in [options.py](utils/option.py).
 
-### Dataset
-In this project, we not only used the PKLot and CNRPark dataset for training and testing, but also created our own dataset by fetching a camera image from Trondheim, Norway that is accessible online on [Inescam](https://www.insecam.org/). We made our own [image-segmentation toolbox](https://github.com/wuyenlin/image_segmentation) to segment and label each image.
+### NORPark
+We made a [segmentation and labeling toolbox](https://github.com/wuyenlin/image_segmentation) to process the obtained images.
+Here is an example of the camera footage on the parking lot.
+[!](https://i.imgur.com/UBQGsgX.jpg)
+The segmented images are zipped in [nor.zip](NORPark/PATCHES/nor.zip) and their corresponding label file is in 
 
 ### Requirements
 ```
