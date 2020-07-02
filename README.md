@@ -6,7 +6,7 @@
 This final project is a part of the requirements of the course CS4245 Seminar Computer Vision by Deep Learning (2019/2020) at TU Delft. The work is done by group 8, including Hao Liu, Sigurd Totland, and Yen-Lin Wu.
 
 In this final project, we attempted to reproduce the result of [CNRPark+EXT](http://cnrpark.it/)- more specifically, table 2 and figure 5 in the paper, [Deep learning for decentralized parking lot occupancy detection](https://www.sciencedirect.com/science/article/abs/pii/S095741741630598X).
-We also created our own test set by downloading images of a surveillance camera in a parking lot at Trondheim, Norway (details can be found in the folder [NORPark](NORPark/)). We report both the reproduction results and the accuracy testing on NORPark. A full blog post can be read [here](CV Blog Post.pdf).
+We also created our own test set by downloading images of a surveillance camera in a parking lot at Trondheim, Norway (details can be found in the folder [NORPark](NORPark/)). We report both the reproduction results and the accuracy testing on NORPark. A full blog post can be read here in [CV_Blog_Post.pdf](CV_Blog_Post.pdf).
 
 ### Download Dataset
 Run the following commands to download the CNRPark, CNRPark-EXT, and PKLot dataset used in this project.
