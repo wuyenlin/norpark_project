@@ -33,6 +33,14 @@ Here is an example of the camera footage on the parking lot.
 ![](https://i.imgur.com/UBQGsgX.jpg)
 The segmented images are zipped in [nor.zip](NORPark/PATCHES/nor.zip) and their corresponding label file is in 
 
+### Results
+We tested on the NORPark dataset with the model trained on PKLot and CNRPark. The accuracies are shown as follows.
+
+<p align='center'>
+  <img src="results/3_nor/nor.png">
+</p>
+
+The accuracy reached as high as 0.89 when trained on PUC, which indicates high similarity between NORPark and PUC.
 ### Requirements
 ```
 python >= 3.6
