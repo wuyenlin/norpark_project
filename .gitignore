@@ -1,3 +1,9 @@
+.git/
+.ipynb_checkpoints/
+utils/
+PKLot/
+PATCHES/
+LABELS/
 .vscode/
 dataset/
 CNRPark-EXT
