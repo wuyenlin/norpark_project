@@ -2,9 +2,12 @@
 
 which unzip > /dev/null && which wget > /dev/null && which tar > /dev/null || { echo "Please install wget, unzip, and tar" && exit 1; }
 
+echo "This command will download and unzip the datasets used in this project."
+
 # 1. CNRPark dataset
 wget "http://cnrpark.it/dataset/CNRPark-Patches-150x150.zip" -O "CNRPark.zip"
-unzip CNRPark.zip && rm CNRPark.zip
+mkdir CNRPark-Patches-150x150
+unzip CNRPark.zip -d CNRPark-Patches-150x150 && rm CNRPark.zip
 
 # 2. CNRPark-EXT dataset
 wget "http://cnrpark.it/dataset/CNR-EXT-Patches-150x150.zip" -O "CNRPark_EXT.zip"

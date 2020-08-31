@@ -4,7 +4,10 @@ utils/
 PKLot/
 PATCHES/
 LABELS/
+A/
+B/
 .vscode/
+trained.pth
 dataset/
 CNRPark-EXT
 __pycache__/
