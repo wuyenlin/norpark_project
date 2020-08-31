@@ -32,9 +32,9 @@ if __name__=="__main__":
     net = mAlexNet().to(device)
     criterion = nn.CrossEntropyLoss()
 
-    args.train_img = 'CNRPark-EXT/PATCHES'
+    args.train_img = 'PATCHES'
     args.train_lab = ['splits/CNRPark-EXT/sunny.txt','splits/CNRPark-EXT/overcast.txt','splits/CNRPark-EXT/rainy.txt']
-    args.test_img = 'CNRPark-EXT/PATCHES/'
+    args.test_img = 'PATCHES/'
     args.test_lab = ['splits/CNRPark-EXT/sunny.txt','splits/CNRPark-EXT/overcast.txt','splits/CNRPark-EXT/rainy.txt','splits/PKLot/val.txt']
 
     txt_file = open('fig5_results.txt', 'a')
